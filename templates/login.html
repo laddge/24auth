@@ -1,0 +1,18 @@
+{% extends "base.html" %}
+
+{% block content %}
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" class="w-12 h-12 my-6 mx-auto fill-indigo-500">
+    <path fill-rule="evenodd" d="M12 1.5a5.25 5.25 0 0 0-5.25 5.25v3a3 3 0 0 0-3 3v6.75a3 3 0 0 0 3 3h10.5a3 3 0 0 0 3-3v-6.75a3 3 0 0 0-3-3v-3c0-2.9-2.35-5.25-5.25-5.25Zm3.75 8.25v-3a3.75 3.75 0 1 0-7.5 0v3h7.5Z" clip-rule="evenodd" />
+  </svg>
+  <div class="text-xl text-center">
+    UECクラウドアカウントでログインしてください
+    <a href="{{ auth_url }}">
+      <button class="block bg-indigo-500 text-indigo-50 my-6 py-2 w-full rounded-lg flex justify-center items-center font-semibold">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 488 512" fill="currentColor" class="h-5 mr-2">
+          <path d="M488 261.8C488 403.3 391.1 504 248 504 110.8 504 0 393.2 0 256S110.8 8 248 8c66.8 0 123 24.5 166.3 64.9l-67.5 64.9C258.5 52.6 94.3 116.6 94.3 256c0 86.5 69.1 156.6 153.7 156.6 98.2 0 135-70.4 140.8-106.9H248v-85.3h236.1c2.3 12.7 3.9 24.9 3.9 41.4z" />
+        </svg>
+        ログイン
+      </button>
+    </a>
+  </div>
+{% endblock %}
