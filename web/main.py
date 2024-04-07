@@ -60,13 +60,13 @@ async def read_root(
             )
         codes = {}
         try:
-            with open("codes.json") as f:
+            with open("./data/codes.json") as f:
                 codes = json.load(f)
         except Exception:
             pass
         code = shortuuid.uuid()
         codes[code] = time.time()
-        with open("codes.json", "w") as f:
+        with open("./data/codes.json", "w") as f:
             json.dump(codes, f)
         return templates.TemplateResponse(
                 request=request, name="callback.html", context={"code": code}

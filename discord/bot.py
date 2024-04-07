@@ -37,20 +37,20 @@ async def on_message(message):
 
     codes = {}
     try:
-        with open("codes.json") as f:
+        with open("./data/codes.json") as f:
             codes = json.load(f)
     except Exception:
         pass
     codes = {k: v for k, v in codes.items() if v > time.time() - 60}
     if message.content in codes.keys():
         codes = {k: v for k, v in codes.items() if k != message.content}
-        with open("codes.json", "w") as f:
+        with open("./data/codes.json", "w") as f:
             json.dump(codes, f)
         member = guild.get_member(message.author.id)
         await member.add_roles(role)
         await message.channel.send("認証しました。")
     else:
-        with open("codes.json", "w") as f:
+        with open("./data/codes.json", "w") as f:
             json.dump(codes, f)
         await message.channel.send("認証に失敗しました。")
 

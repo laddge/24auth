@@ -3,3 +3,4 @@ uvicorn==0.29.0
 shortuuid==1.0.13
 httpx==0.27.0
 python-dotenv==1.0.1
+Jinja2==3.0.3

@@ -1,0 +1,14 @@
+services:
+  web:
+    build: ./web
+    volumes:
+      - ./data:/usr/src/app/data
+    ports:
+      - "8080:8080"
+    restart: always
+
+  discord:
+    build: ./discord
+    volumes:
+      - ./data:/usr/src/app/data
+    restart: always
